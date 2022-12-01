@@ -1,4 +1,4 @@
-Game_ideas = """
+game_ideas = """
 1. Zelda screen movement
 2. races: 
     a. snow people 
@@ -77,3 +77,4 @@ def main(scale):
         elif condition != 1 or condition != 2 or condition != 3:
             print("Error. Usage is Python <Program name> <condition> where condition = '1' for peace, '2' for scuffle or '3' for ganon")
     except IndexError:
+        pass
