@@ -1,4 +1,4 @@
-game_ideas = """
+Game_ideas = """
 1. Zelda screen movement
 2. races: 
     a. snow people 
@@ -40,6 +40,8 @@ if player_choice == "1":
     draw_head_one()
 19. importing sprites? 
 20. light sources?
+21. Have players select 1 piece of armor to give greater variety to game play
+
 
 Robbie: Art, Idea/outlines
 Marc: Logic, Tilemapping?
@@ -77,4 +79,4 @@ def main(scale):
         elif condition != 1 or condition != 2 or condition != 3:
             print("Error. Usage is Python <Program name> <condition> where condition = '1' for peace, '2' for scuffle or '3' for ganon")
     except IndexError:
-        pass
+        
