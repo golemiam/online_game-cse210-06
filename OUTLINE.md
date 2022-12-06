@@ -38,6 +38,7 @@
     - like head is a separate sprite from body
 18. (2) importing sprites? 
 19. (3) light sources?
+20. Have players select 1 piece of armor to give greater variety to game play
 
 ## Roles
 - Robbie: Art, Idea/outlines
