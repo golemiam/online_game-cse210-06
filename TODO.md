@@ -6,6 +6,8 @@ Last updated on **December 8th 2022** by **Marc**
 
 ## Priority Tasks
 - Implement characters
+    - character images have been made
+    - Need to write code for them now
 - Implement enemies/npcs
 - Add in gameplay elements/objectives
 
