@@ -16,10 +16,10 @@ class Image:
         return self._filename
 
     def get_rotation(self):
-        """Gets the degrees the image should be rotated.
+        """Gets the degrees the image should be rotation.
 
         Returns:
-            A float representing the degrees the image should be rotated.
+            A float representhing the degrees the image should be rotated.
         """
         return self._rotation
 
@@ -31,14 +31,6 @@ class Image:
         """
         return self._scale
 
-    def set_filename(self, filename):
-        """Sets the image's filename to the given value.
-        
-        Args:
-            filename: A string containing the filepath of an image.
-        """
-        self._filename = filename
-        
     def set_rotation(self, rotation):
         """Sets the image's rotation to the given value.
 

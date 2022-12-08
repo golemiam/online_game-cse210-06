@@ -22,14 +22,14 @@ FIELD_LEFT = 0
 FIELD_RIGHT = SCREEN_WIDTH
 
 # FONT
-FONT_FILE = "assets/fonts/logbook-prime-v2_0.ttf"
+FONT_FILE = "battigliadefe/assets/fonts/logbook-prime-v2_0.ttf"
 FONT_SMALL = 32
 FONT_LARGE = 48
 
 # SOUND
-BOUNCE_SOUND = "assets/sounds/boing.wav"
-WELCOME_SOUND = "assets/sounds/start.wav"
-OVER_SOUND = "assets/sounds/over.wav"
+BOUNCE_SOUND = "battigliadefe/assets/sounds/boing.wav"
+WELCOME_SOUND = "battigliadefe/assets/sounds/start.wav"
+OVER_SOUND = "battigliadefe/assets/sounds/over.wav"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -47,6 +47,7 @@ RIGHT = "right"
 SPACE = "space"
 ENTER = "enter"
 PAUSE = "escape" or "p"
+SHIFT = "shift"
 
 # SCENES
 NEW_GAME = 0
@@ -88,11 +89,11 @@ SCORE_FORMAT = "SCORE: {}"
 
 # HEALTH BAR
 LIVES_GROUP = "lives"
-HEALTH_FULL = "assets/images/200.png"
-HEALTH_75 = "assets/images/203.png"
-HEALTH_HALF = "assets/images/206.png"
-HEALTH_25 = "assets/images/208.png"
-HEALTH_EMPTY = "assets/images/211.png"
+HEALTH_FULL = "battigliadefe/assets/images/200.png"
+HEALTH_75 = "battigliadefe/assets/images/203.png"
+HEALTH_HALF = "battigliadefe/assets/images/206.png"
+HEALTH_25 = "battigliadefe/assets/images/208.png"
+HEALTH_EMPTY = "battigliadefe/assets/images/211.png"
 HEALTH_STATE = [HEALTH_FULL, HEALTH_75, HEALTH_HALF, HEALTH_25, HEALTH_EMPTY]
 
 # DIALOG
@@ -100,3 +101,7 @@ DIALOG_GROUP = "dialogs"
 ENTER_TO_START = "PRESS ENTER TO START"
 PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
 WAS_GOOD_GAME = "GAME OVER"
+
+# PLAYER CHARACTERS
+
+# WORLD OBSTACLES

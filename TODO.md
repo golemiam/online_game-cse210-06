@@ -2,7 +2,7 @@
 Last updated on **December 8th 2022** by **Marc**
 
 ## Bugs/Problems
-- Nothing yet
+- Some file paths may be broken with the folder change. (just needs to have 'battigliadefe/' added into the string.)
 
 ## Priority Tasks
 - Implement characters
