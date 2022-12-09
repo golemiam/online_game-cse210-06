@@ -10,10 +10,10 @@ from game.services.video_service import VideoService
 class RaylibVideoService(VideoService):
     """ A Raylib implementation of VideoService."""
 
-    def __init__(self, title = "", width = 640, height = 480, color = BLACK):
+    def __init__(self, title = "", width = 1040, height = 480, color = BLACK):
         self._title = title
-        self._width = width
-        self._height = height
+        self._width = pyray.get_screen_width
+        self._height = pyray.get_screen_height
         self._color = color
         self._fonts = {}
         self._textures = {}

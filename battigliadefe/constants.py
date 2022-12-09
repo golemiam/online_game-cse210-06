@@ -1,4 +1,5 @@
 import pathlib
+import pyray
 from game.casting.color import Color
 
 # -------------------------------------------------------------------------------------------------- 
@@ -42,12 +43,28 @@ WHITE = Color(255, 255, 255)
 PURPLE = Color(255, 0, 255)
 
 # KEYS
-LEFT = "left"
-RIGHT = "right"
-SPACE = "space"
-ENTER = "enter"
 PAUSE = "escape" or "p"
-SHIFT = "shift"
+
+P1_LEFT = "a"
+P1_RIGHT = "d"
+P1_UP = "w"
+P1_DOWN = "s"
+P1_SPRINT = "left shift"
+P1_PREACH = "space"
+
+P2_LEFT = "k"
+P2_RIGHT = "semicolon"
+P2_UP = "o"
+P2_DOWN = "l"
+P2_SPRINT = "right shift"
+P2_PREACH = "alt"
+
+P3_LEFT = "numpad 4"
+P3_RIGHT = "numpad 6"
+P3_UP = "numpad 8"
+P3_DOWN = "numpad 5"
+P3_SPRINT = "numpad 0"
+P3_PREACH = "left"
 
 # SCENES
 NEW_GAME = 0
@@ -87,21 +104,50 @@ SCORE_GROUP = "score"
 LEVEL_FORMAT = "LEVEL: {}"
 SCORE_FORMAT = "SCORE: {}"
 
-# HEALTH BAR
-LIVES_GROUP = "lives"
-HEALTH_FULL = "battigliadefe/assets/images/200.png"
-HEALTH_75 = "battigliadefe/assets/images/203.png"
-HEALTH_HALF = "battigliadefe/assets/images/206.png"
-HEALTH_25 = "battigliadefe/assets/images/208.png"
-HEALTH_EMPTY = "battigliadefe/assets/images/211.png"
-HEALTH_STATE = [HEALTH_FULL, HEALTH_75, HEALTH_HALF, HEALTH_25, HEALTH_EMPTY]
+# HEALTH BARS
+P1_LIVES_GROUP = "p1_lives"
+P1_H0 = "battigliadefe/assets/images/200.png"
+P1_H1 = "battigliadefe/assets/images/201.png"
+P1_H2 = "battigliadefe/assets/images/202.png"
+P1_H3 = "battigliadefe/assets/images/203.png"
+P1_H4 = "battigliadefe/assets/images/204.png"
+P1_HEALTH_STATES = [P1_H0, P1_H1, P1_H2, P1_H3, P1_H4]
+
+P2_LIVES_GROUP = "p2_lives"
+P2_H0 = "battigliadefe/assets/images/210.png"
+P2_H1 = "battigliadefe/assets/images/211.png"
+P2_H2 = "battigliadefe/assets/images/212.png"
+P2_H3 = "battigliadefe/assets/images/213.png"
+P2_H4 = "battigliadefe/assets/images/214.png"
+P2_HEALTH_STATES = [P2_H0, P2_H1, P2_H2, P2_H3, P2_H4]
+
+P3_LIVES_GROUP = "p3_lives"
+P3_H0 = "battigliadefe/assets/images/220.png"
+P3_H1 = "battigliadefe/assets/images/221.png"
+P3_H2 = "battigliadefe/assets/images/222.png"
+P3_H3 = "battigliadefe/assets/images/223.png"
+P3_H4 = "battigliadefe/assets/images/224.png"
+P3_HEALTH_STATES = [P3_H0, P3_H1, P3_H2, P3_H3, P3_H4]
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
 ENTER_TO_START = "PRESS ENTER TO START"
-PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
+PREP_TO_LAUNCH = "PREPARING TO PREACH!"
 WAS_GOOD_GAME = "GAME OVER"
 
 # PLAYER CHARACTERS
+PLAYERS_GROUP = "players"
+## PLAYER 1 INFORMATION
+P1_IMAGE = "assets/images/000.png"
+P1_X = int(SCREEN_WIDTH / 4)
+P1_Y = CENTER_Y
+## PLAYER 2 INFORMATION
+P2_IMAGE = "assets/images/001.png"
+P2_X = CENTER_X
+P2_Y = CENTER_Y
+## PLAYER 3 INFORMATION
+P3_IMAGE = "assets/images/002.png"
+P3_X = int(CENTER_X*1.5)
+P3_Y = CENTER_Y
 
 # WORLD OBSTACLES

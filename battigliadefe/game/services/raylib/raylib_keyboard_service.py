@@ -1,57 +1,116 @@
 import pyray
+from game.casting.point import Point
 from game.services.keyboard_service import KeyboardService
 
 
 class RaylibKeyboardService(KeyboardService):
     """A Raylib implementation of KeyboardService."""
 
-    def __init__(self):
-        self._keys = {}
-        self._keys["a"] = pyray.KEY_A
-        self._keys["b"] = pyray.KEY_B
-        self._keys["c"] = pyray.KEY_C
-        self._keys["d"] = pyray.KEY_D
-        self._keys["e"] = pyray.KEY_E
-        self._keys["f"] = pyray.KEY_F
-        self._keys["g"] = pyray.KEY_G
-        self._keys["h"] = pyray.KEY_H
-        self._keys["i"] = pyray.KEY_I
-        self._keys["j"] = pyray.KEY_J
-        self._keys["k"] = pyray.KEY_K
-        self._keys["l"] = pyray.KEY_L
-        self._keys["m"] = pyray.KEY_M
-        self._keys["n"] = pyray.KEY_N
-        self._keys["o"] = pyray.KEY_O
-        self._keys["p"] = pyray.KEY_P
-        self._keys["q"] = pyray.KEY_Q
-        self._keys["r"] = pyray.KEY_R
-        self._keys["s"] = pyray.KEY_S
-        self._keys["t"] = pyray.KEY_T
-        self._keys["u"] = pyray.KEY_U
-        self._keys["v"] = pyray.KEY_V
-        self._keys["w"] = pyray.KEY_W
-        self._keys["x"] = pyray.KEY_X
-        self._keys["y"] = pyray.KEY_Y
-        self._keys["z"] = pyray.KEY_Z
-        self._keys["0"] = pyray.KEY_ZERO
-        self._keys["1"] = pyray.KEY_ONE
-        self._keys["2"] = pyray.KEY_TWO
-        self._keys["3"] = pyray.KEY_THREE
-        self._keys["4"] = pyray.KEY_FOUR
-        self._keys["5"] = pyray.KEY_FIVE
-        self._keys["6"] = pyray.KEY_SIX
-        self._keys["7"] = pyray.KEY_SEVEN
-        self._keys["8"] = pyray.KEY_EIGHT
-        self._keys["9"] = pyray.KEY_NINE
-        self._keys["left"] = pyray.KEY_LEFT
-        self._keys["right"] = pyray.KEY_RIGHT
-        self._keys["up"] = pyray.KEY_UP
-        self._keys["down"] = pyray.KEY_DOWN
-        self._keys["enter"] = pyray.KEY_ENTER
-        self._keys["space"] = pyray.KEY_SPACE
-        self._keys["escape"] = pyray.KEY_ESCAPE
-        self._keys["shift"] = pyray.KEY_LEFT_SHIFT
+    def __init__(self, cell_size = 1):
+        """Constructs a new KeyboardService using the specified cell size.
+        
+        Args:
+            cell_size (int): The size of a cell in the display grid. (If omitted, cell_size is 1)
+        """
+        self._cell_size = cell_size
+        self._p1_dx = 0
+        self._p1_dy = 0
+        self._p2_dx = 0
+        self._p2_dy = 0
+        self._p3_dx = 0
+        self._p3_dy = 0
 
+    def get_player1_direction(self):
+        """Gets the selected direction based on the currently pressed keys.
+        Returns:
+            Point: The selected direction.
+        """
+        if pyray.is_key_down(pyray.KEY_A): #Left
+            self._p1_dx = -1
+            self._p1_dy = 0
+        elif pyray.is_key_down(pyray.KEY_S): #Down
+            self._p1_dx = 0
+            self._p1_dy = 1
+        elif pyray.is_key_down(pyray.KEY_D): #Right
+            self._p1_dx = 1
+            self._p1_dy = 0
+        elif pyray.is_key_down(pyray.KEY_W): #Up
+            self._p1_dx = 0
+            self._p1_dy = -1
+        if pyray.is_key_down(pyray.KEY_LEFT_SHIFT): #Sprint
+            pass
+
+        direction = Point(self._p1_dx, self._p1_dy)
+        direction = direction.scale(self._cell_size)
+        
+        return direction
+    
+    def get_player2_direction(self):
+        """Gets the selected direction based on the currently pressed keys.
+        Returns:
+            Point: The selected direction.
+        """
+        if pyray.is_key_down(pyray.KEY_K): #Left
+            self._p2_dx = -1
+            self._p2_dy = 0
+        if pyray.is_key_down(pyray.KEY_L): #Down
+            self._p2_dx = 0
+            self._p2_dy = 1
+        if pyray.is_key_down(pyray.KEY_SEMICOLON): #Right
+            self._p2_dx = 1
+            self._p2_dy = 0
+        if pyray.is_key_down(pyray.KEY_O): #Up
+            self._p2_dx = 0
+            self._p2_dy = -1
+        if pyray.is_key_down(pyray.KEY_LEFT_SHIFT): #Sprint
+            pass
+
+        direction = Point(self._p2_dx, self._p2_dy)
+        direction = direction.scale(self._cell_size)
+        
+        return direction
+    
+    def get_player3_direction(self):
+        """Gets the selected direction based on the currently pressed keys.
+        Returns:
+            Point: The selected direction.
+        """
+        if pyray.is_key_down(pyray.KEY_LEFT): #Left
+            self._p3_dx = -1
+            self._p3_dy = 0
+        elif pyray.is_key_down(pyray.KEY_DOWN): #Down
+            self._p3_dx = 0
+            self._p3_dy = 1
+        elif pyray.is_key_down(pyray.KEY_RIGHT): #Right
+            self._p3_dx = 1
+            self._p3_dy = 0
+        elif pyray.is_key_down(pyray.KEY_UP): #Up
+            self._p3_dx = 0
+            self._p3_dy = -1
+        if pyray.is_key_down(pyray.KEY_NUM_0): #Sprint
+            pass
+
+        direction = Point(self._p3_dx, self._p3_dy)
+        direction = direction.scale(self._cell_size)
+        
+        return direction
+    
+    def get_entity_direction(self):
+        """Sets the entities direction to fall.
+        Returns:
+            Point: The direction.
+        """
+        dx = 0
+        dy = 1
+
+        direction = Point(dx, dy)
+        return direction
+    
+    def get_end_game(self, status):
+        if (status == False):
+            if(pyray.is_key_down(pyray.KEY_L)):
+                print("pressed")
+    
     def is_key_down(self, key):
         raylib_key = self._keys[key.lower()]
         return pyray.is_key_down(raylib_key)
@@ -67,3 +126,8 @@ class RaylibKeyboardService(KeyboardService):
     def is_key_up(self, key):
         raylib_key = self._keys[key.lower()]
         return pyray.is_key_up(raylib_key)
+    
+    def get_end_game(self, status):
+        if (status == False):
+            if(pyray.is_key_down(pyray.KEY_L)):
+                print("pressed")
