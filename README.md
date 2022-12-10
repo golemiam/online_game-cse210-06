@@ -1,5 +1,5 @@
-# Batter
-Batter is a clone of the classic breakout game.
+# Richochet
+Richochet is a game about avoiding projectiles that bounce around the screen.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ python3 -m pip install raylib
 
 After you've installed the required libraries, open a terminal and browse to the project's root folder. Start the program by running the following command.
 
-python3 batter 
+python3 richochet 
 
 You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the 
 project folder. Select the main module inside the hunter folder and click the "run" icon.
@@ -19,11 +19,14 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 
 root                    (project root folder)
-/-- batter              (source code for game)
+/-- richochet              (source code for game)
   /-- game              (specific game classes)
     /-- casting         (various actor classes)
+      /--entities       (various actor classes with physics)
     /-- directing       (director and scene manager classes)
     /-- scripting       (various action classes)
+      /-- art_actions   (various drawing actions)
+      /-- physics       (various physics actions)
     /-- services        (various service classes)
   /-- __main__.py       (entry point for program)
   /-- constants.py      (game constants)
@@ -35,10 +38,10 @@ root                    (project root folder)
 * Python 3.8.0
 * Raylib Python CFFI 3.7
 
-## Help
+## Additional Help
 In the case that the program starts but closes immediately after, make sure that the folder you have selected the program to run from is the parent folder of '__main__.py'.
 
-## Authors
+## Thursday Team Members 
 
 * Marc Rollins
 * Robbie Platt
